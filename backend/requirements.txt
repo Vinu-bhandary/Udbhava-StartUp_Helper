@@ -1,0 +1,5 @@
+Django>=4.0,<5.0
+django-ninja
+psycopg2-binary>=2.9
+google-generativeai
+django-cors-headers
