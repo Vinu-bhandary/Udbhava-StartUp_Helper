@@ -1,28 +1,36 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import "./App.css";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Pages
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import ValidatorMode from './pages/ValidatorMode';
+import RiskMode from './pages/RiskMode';
+import PlannerMode from './pages/PlannerMode';
+
+// Components
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
-      <div className="app-container">
-        <Navbar />
-        <div className="main-content">
-          <Sidebar />
-          <div className="page-content">
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-            </Routes>
-          </div>
-        </div>
-      </div>
+      {/* Navbar will be shown on every page */}
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/validator" element={<ValidatorMode />} />
+        <Route path="/risk" element={<RiskMode />} />
+        <Route path="/planner" element={<PlannerMode />} />
+        
+      </Routes>
+
+      {/* Optional: Footer displayed on every page */}
+      <Footer />
     </Router>
   );
 }

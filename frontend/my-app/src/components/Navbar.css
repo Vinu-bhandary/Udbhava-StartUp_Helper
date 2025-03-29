@@ -1,20 +1,53 @@
+/* Navbar.css */
+* {
+  text-decoration: none;
+  height: fit-content;
+  color: #fff;
+}
+
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px 20px;
-  }
-  
-  .profile {
-    display: flex;
-    align-items: center;
-  }
-  
-  .profile button {
-    margin-left: 10px;
-    background: red;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  color: #000; /* Optional: Change text color for visibility */
+}
+
+.dropdown-content button {
+  background-color: red;
+}
+
+/* New class to show dropdown */
+.dropdown-content.visible {
+  display: block;
+}
